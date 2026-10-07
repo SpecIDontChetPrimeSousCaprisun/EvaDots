@@ -1,11 +1,13 @@
 import Quickshell
+import Quickshell.Io
 import Quickshell.Wayland
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Effects
+import qs.services
 import qs.components
 import qs.config
-import qs.modules
+import qs.modules.Taskbar
 
 Variants {
     model: Quickshell.screens
@@ -84,7 +86,8 @@ Variants {
 			id: bottomLayout
 			anchors.fill: parent
 
-			PowerButton {}
+			Media { property string type: "Media" }
+			PowerButton { property string type: "Power" }
 		    }
 
 		    Item {
@@ -105,10 +108,32 @@ Variants {
 		    }
 		}
 	    }
+	}
 
-	    MultiEffect {
-		anchors.fill: parent
-		blur: 30
+	Timer {
+	    interval: 100
+	    running: true
+	    repeat: true
+	    onTriggered: {
+		TooltipServ.buttonPoses.length = 0
+
+		for (let i = 0; i < topLayout.children.length; i++) {
+		    TooltipServ.buttonPoses.push({ 
+			topLeft: topLayout.children[i].mapToItem(null, 0, 0),
+			width: width,
+			height: height,
+			type: bottomLayout.children[i].type
+		    })
+		}
+
+		for (let i = 0; i < bottomLayout.children.length; i++) {
+		    TooltipServ.buttonPoses.push({
+			topLeft: bottomLayout.children[i].mapToItem(null, 0, 0),
+			width: bottomLayout.children[i].width,
+			height: bottomLayout.children[i].height,
+			type: bottomLayout.children[i].type
+		    })
+		}
 	    }
 	}
     }

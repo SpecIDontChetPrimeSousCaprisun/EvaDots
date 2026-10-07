@@ -25,12 +25,10 @@ Item {
 	parent: text
 	anchors.fill: parent
 	hoverEnabled: true
+	preventStealing: true
 	onEntered: {
-	    let topLeft = this.mapToItem(null, 0, 0);
-	    TooltipServ.posY = topLeft.y + height / 2
-	    TooltipServ.botL = topLeft.y + height
-	    TooltipServ.type = "Power"
-	    TooltipServ.open()
+	    let topLeft = parent.mapToItem(null, 0, 0);
+	    TooltipServ.open("Power", topLeft, height)
 	}
     }
 }

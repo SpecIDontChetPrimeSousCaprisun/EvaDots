@@ -8,6 +8,7 @@ import qs.services
 import qs.modules.Tooltip
 
 StyledWindow {
+    id: root
     visible: TooltipServ.menuVisible
     mask: widget
 
@@ -21,68 +22,90 @@ StyledWindow {
 
     MouseArea {
 	x: 0
-	y: widget.y
-	width: widget.x + widget.width
-	height: widget.y + TooltipServ.botL
+	y: TooltipServ.posY + layout.implicitHeight > root.height ? TooltipServ.botL - layout.implicitHeight : 
+	   TooltipServ.posY - layout.implicitHeight / 2
+	width: 360
+	height: TooltipServ.botL - y
 	hoverEnabled: true
 
-	onExited: TooltipServ.menuVisible = false
-    }
-
-    Widget {
-	id: widget
-	x: 60
-	y: TooltipServ.posY - height 
-	width: TooltipServ.menuVisible ? 300 : 0
-	height: layout.implicitHeight
-	clip: true
-
-	Behavior on width {
-	    Anim {}
+	onExited: { 
+	    TooltipServ.menuVisible = false
 	}
 
-	ColumnLayout {
-	    id: layout
+	onPositionChanged: {
+	    for (let i = 0; i < TooltipServ.buttonPoses.length; i++) {
+		let topLeft = TooltipServ.buttonPoses[i].topLeft
 
-	    Rectangle {
-		height: 40
-		width: labelText.implicitWidth
-		opacity: 1
-		color: Theme.accent
+		console.log(topLeft.x, TooltipServ.topLeft.x)
+		if (TooltipServ.buttonPoses[i].type === TooltipServ.type) return;
 
-		Text {
-		    id: labelText
-		    anchors.centerIn: parent
-		    text: TooltipServ.type
-		    color: Theme.background
-		    font {
-			family: Theme.font
-			letterSpacing: -1
-			pixelSize: 27
-			weight: 1000
-		    }
-		}
+		let mouseX = this.mapToItem(null, 0, 0).x + mouse.x
+		let mouseY = this.mapToItem(null, 0, 0).y + mouse.y
 
-		Item {
-		    anchors.left: parent.right
-		    height: parent.height
-		    width: 100
-		    clip: true
-
-		    Rectangle {
-			height: parent.height * 2
-			width: 100
-			radius: 100
-			opacity: 1
-			color: Theme.accent
-			z: -1
-			x: -width / 2
-			y: -height / 2
-		    }
+		if (topLeft.x <= mouseX &&
+		    topLeft.x + TooltipServ.buttonPoses[i].width >= mouseX &&
+		    topLeft.y <= mouseY &&
+		    topLeft.y + TooltipServ.buttonPoses[i].height >= mouseY) {
+			TooltipServ.menuVisible = false
+			break
 		}
 	    }
+	}
 
-	    Power {}
+	Widget {
+	    id: widget
+	    x: 60
+	    width: TooltipServ.menuVisible ? 300 : 0
+	    height: layout.implicitHeight
+	    clip: true
+
+	    Behavior on width {
+		Anim {}
+	    }
+
+	    ColumnLayout {
+		id: layout
+
+		Rectangle {
+		    height: 40
+		    width: labelText.implicitWidth
+		    opacity: 1
+		    color: Theme.accent
+
+		    Text {
+			id: labelText
+			anchors.centerIn: parent
+			text: TooltipServ.type
+			color: Theme.background
+			font {
+			    family: Theme.font
+			    letterSpacing: -1
+			    pixelSize: 27
+			    weight: 1000
+			}
+		    }
+
+		    Item {
+			anchors.left: parent.right
+			height: parent.height
+			width: 100
+			clip: true
+
+			Rectangle {
+			    height: parent.height * 2
+			    width: 100
+			    radius: 100
+			    opacity: 1
+			    color: Theme.accent
+			    z: -1
+			    x: -width / 2
+			    y: -height / 2
+			}
+		    }
+		}
+
+		Power {}
+	    }
 	}
     }
 }
