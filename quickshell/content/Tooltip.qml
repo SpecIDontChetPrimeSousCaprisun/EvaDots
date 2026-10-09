@@ -55,7 +55,7 @@ StyledWindow {
 	Widget {
 	    id: widget
 	    x: 60
-	    width: TooltipServ.menuVisible ? 300 : 0
+	    width: TooltipServ.menuVisible ? layout.implicitWidth < 300 ? 300 : layout.implicitWidth : 0
 	    height: layout.implicitHeight
 	    clip: true
 
@@ -65,6 +65,7 @@ StyledWindow {
 
 	    ColumnLayout {
 		id: layout
+		anchors.fill: parent
 
 		Rectangle {
 		    height: 40
@@ -74,14 +75,14 @@ StyledWindow {
 
 		    Text {
 			id: labelText
-			anchors.centerIn: parent
+			anchors.fill: parent
 			text: TooltipServ.type
 			color: Theme.background
 			font {
 			    family: Theme.font
 			    letterSpacing: -1
 			    pixelSize: 27
-			    weight: 1000
+			    weight: 600
 			}
 		    }
 
@@ -105,6 +106,7 @@ StyledWindow {
 		}
 
 		Power {}
+		Media {}
 	    }
 	}
     }

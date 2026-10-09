@@ -1,4 +1,5 @@
 import Quickshell
+import Quickshell.Io
 import QtQuick
 import QtQuick.Layouts
 import qs.services
@@ -56,11 +57,20 @@ Item {
 		    }
 		}
 
+		Process {
+		    id: proc
+		    command: modelData.command
+		}
+
 		MouseArea {
 		    id: mouse
 		    parent: text
 		    anchors.fill: parent
 		    hoverEnabled: true
+
+		    onClicked: {
+			proc.running = true
+		    }
 		}
 	    }
 	}

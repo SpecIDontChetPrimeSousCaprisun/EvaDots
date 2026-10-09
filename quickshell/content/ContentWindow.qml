@@ -48,6 +48,10 @@ Variants {
 		    ColumnLayout {
 			id: topLayout
 			anchors.fill: parent
+
+			Volume { property string type: "Volume" }
+			Microphone { property string type: "Microphone" }
+			Battery { property string type: "Battery" }
 		    }
 
 		    Item {
@@ -67,11 +71,7 @@ Variants {
 		    }
 		}
 
-		Item {
-		    Layout.fillHeight: true
-		}
-
-		Clock {}
+		Clock { anchors.centerIn: parent }
 
 		Item {
 		    Layout.fillHeight: true
@@ -86,6 +86,9 @@ Variants {
 			id: bottomLayout
 			anchors.fill: parent
 
+			Cpu { property string type: "Cpu" }
+			Ram { property string type: "Ram" }
+			Gpu { property string type: "Gpu" }
 			Media { property string type: "Media" }
 			PowerButton { property string type: "Power" }
 		    }
@@ -120,9 +123,9 @@ Variants {
 		for (let i = 0; i < topLayout.children.length; i++) {
 		    TooltipServ.buttonPoses.push({ 
 			topLeft: topLayout.children[i].mapToItem(null, 0, 0),
-			width: width,
-			height: height,
-			type: bottomLayout.children[i].type
+			width: topLayout.children[i].width,
+			height: topLayout.children[i].height,
+			type: topLayout.children[i].type
 		    })
 		}
 
