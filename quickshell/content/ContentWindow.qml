@@ -52,6 +52,7 @@ Variants {
 			Volume { property string type: "Volume" }
 			Microphone { property string type: "Microphone" }
 			Battery { property string type: "Battery" }
+			Workspaces { property string type: "Workspaces" }
 		    }
 
 		    Item {
