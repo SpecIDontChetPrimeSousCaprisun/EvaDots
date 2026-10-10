@@ -101,7 +101,6 @@ Singleton {
 	stdout: StdioCollector {
 	    onStreamFinished: {
 		power = parseFloat(text.trim())
-		console.log(text.trim())
 	    }
 	}
     }
@@ -117,7 +116,6 @@ Singleton {
 	stdout: StdioCollector {
 	    onStreamFinished: {
 		powerFull = parseFloat(text.trim())
-		console.log(text.trim())
 	    }
 	}
     }

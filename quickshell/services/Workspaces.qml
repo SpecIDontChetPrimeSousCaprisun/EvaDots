@@ -7,4 +7,19 @@ import QtQuick
 
 Singleton {
     property var workspaces: Hyprland.workspaces
+
+    function switchWorkspaces(index) {
+	switchProc.command = [
+	    "hyprctl",
+	    "eval",
+	    "'hl.dispatch(hl.dsp.focus({ workspace = " + '"' + index.toString() + '"' + "}))'"
+	]
+
+	console.log(switchProc.command)
+	switchProc.running = true
+    }
+
+    Process {
+	id: switchProc
+    }
 }

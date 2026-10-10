@@ -17,6 +17,7 @@ Variants {
 
 	name: "content"
 	screen: modelData
+	id: root
 
 	WlrLayershell.layer: WlrLayer.Top
 
@@ -87,6 +88,7 @@ Variants {
 			id: bottomLayout
 			anchors.fill: parent
 
+			Tray { property string type: "Tray" }
 			Cpu { property string type: "Cpu" }
 			Ram { property string type: "Ram" }
 			Gpu { property string type: "Gpu" }

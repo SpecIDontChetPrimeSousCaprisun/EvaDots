@@ -29,6 +29,11 @@ Item {
 		    height: 10
 		    radius: 100
 		    color: modelData.focused ? Theme.workspaceSelected : Theme.workspace
+
+		    MouseArea {
+			anchors.fill: parent
+			onClicked: Workspaces.switchWorkspaces(modelData.id)
+		    }
 		}
 	    }
 	}
