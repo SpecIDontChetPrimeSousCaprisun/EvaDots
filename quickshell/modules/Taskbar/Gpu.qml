@@ -12,23 +12,26 @@ Item {
 	id: layout
 	anchors.fill: parent
 
-	Text {
-	    id: icon
-	    horizontalAlignment: Text.AlignHCenter
-	    Layout.fillWidth: true
-	    text: ""
-	    color: Theme.background
-	    font {
-		family: Theme.font
-		letterSpacing: -1
-		pixelSize: 20
-		weight: 600
+	RowLayout {
+	    Item { Layout.fillWidth: true }
+
+	    Text {
+		id: icon
+		text: ""
+		color: Theme.background
+		font {
+		    family: Theme.font
+		    pixelSize: 20
+		    weight: 600
+		}
 	    }
+
+	    Item { Layout.fillWidth: true }
 	}
 
 	Text {
 	    id: text
-	    text: "100C"
+	    text: Math.round(Perfs.gpu) + "C"
 	    horizontalAlignment: Text.AlignHCenter
 	    Layout.fillWidth: true
 	    color: Theme.background

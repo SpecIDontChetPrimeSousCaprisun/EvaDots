@@ -5,19 +5,42 @@ import qs.config
 import qs.services
 
 Item {
-    implicitHeight: text.implicitHeight
+    implicitHeight: layout.implicitHeight
     Layout.fillWidth: true
 
-    Text {
-	id: text
-	anchors.centerIn: parent
-	text: " 󰁹\n100%"
-	color: Theme.background
-	font {
-	    family: Theme.font
-	    letterSpacing: -1
-	    pixelSize: 15
-	    weight: 600
+    ColumnLayout {
+	id: layout
+	anchors.fill: parent
+
+	RowLayout {
+	    Item { Layout.fillWidth: true }
+
+	    Text {
+		id: icon
+		text: "󰁹"
+		color: Theme.background
+		font {
+		    family: Theme.font
+		    pixelSize: 20
+		    weight: 600
+		}
+	    }
+
+	    Item { Layout.fillWidth: true }
+	}
+
+	Text {
+	    id: text
+	    text: Math.round((Perfs.power / Perfs.powerFull) * 100) + "%"
+	    horizontalAlignment: Text.AlignHCenter
+	    Layout.fillWidth: true
+	    color: Theme.background
+	    font {
+		family: Theme.font
+		letterSpacing: -1
+		pixelSize: 15
+		weight: 600
+	    }
 	}
     }
 
