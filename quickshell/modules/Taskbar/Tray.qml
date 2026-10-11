@@ -6,6 +6,7 @@ import qs.config
 import qs.services
 
 Item {
+    visible: repeater.count > 0
     Layout.fillWidth: true
     implicitHeight: rectangle.implicitHeight
 
@@ -21,6 +22,7 @@ Item {
 	    id: layout
 	    anchors.centerIn: parent
 	    Repeater {
+		id: repeater
 		model: SystemTray.items
 
 		Image {
