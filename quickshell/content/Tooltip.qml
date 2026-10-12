@@ -107,6 +107,9 @@ StyledWindow {
 
 		Power {}
 		Media {}
+		Gpu   {}
+		Ram   {}
+		Cpu   {}
 	    }
 	}
     }
