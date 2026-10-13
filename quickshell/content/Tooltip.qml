@@ -69,7 +69,7 @@ StyledWindow {
 
 		Rectangle {
 		    height: 40
-		    width: labelText.implicitWidth
+		    width: labelText.implicitWidth + 50
 		    opacity: 1
 		    color: Theme.accent
 
@@ -89,6 +89,7 @@ StyledWindow {
 		    Item {
 			anchors.left: parent.right
 			height: parent.height
+			z: -1
 			width: 100
 			clip: true
 
@@ -105,11 +106,14 @@ StyledWindow {
 		    }
 		}
 
-		Power {}
-		Media {}
-		Gpu   {}
-		Ram   {}
-		Cpu   {}
+		Power      {}
+		Media      {}
+		Gpu        {}
+		Ram        {}
+		Cpu        {}
+		Battery    {}
+		Microphone {}
+		Volume     {}
 	    }
 	}
     }

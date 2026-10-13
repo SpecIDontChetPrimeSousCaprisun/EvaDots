@@ -31,7 +31,7 @@ Item {
 
 	Text {
 	    id: text
-	    text: Math.round(Volume.micVolume) + "%"
+	    text: Math.round(Volume.micVolume * 100) + "%"
 	    horizontalAlignment: Text.AlignHCenter
 	    Layout.fillWidth: true
 	    color: Theme.background

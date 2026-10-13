@@ -3,6 +3,7 @@ import Quickshell
 import QtQuick
 import qs.background
 import qs.content
+import qs.components
 import qs.modules.LockScreen
 
 ShellRoot {
@@ -10,4 +11,5 @@ ShellRoot {
     ContentWindow {}
     Tooltip {}
     LockScreen {}
+    ReloadPopup {}
 }
