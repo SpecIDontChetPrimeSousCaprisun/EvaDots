@@ -3,6 +3,7 @@ import Quickshell.Wayland
 import QtQuick
 import qs.components
 import qs.config
+import qs.modules
 
 Variants {
     model: Quickshell.screens

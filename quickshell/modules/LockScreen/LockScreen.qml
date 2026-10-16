@@ -5,6 +5,7 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Effects
 import qs.config
+import qs.modules
 import qs.components
 import qs.services
 
@@ -17,10 +18,13 @@ Item {
 	WlSessionLockSurface {
 	    id: surface
 
-	    Background {
+	    LockBackground {
 		anchors.fill: parent
 		screen: surface.screen
 		id: bgImage
+
+		AudioVisualiser {
+		}
 	    }
 
 	    MultiEffect {
