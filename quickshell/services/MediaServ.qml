@@ -14,8 +14,6 @@ Item {
 	running: true
 	repeat: true
 	onTriggered: {
-	    console.log("a")
-	    console.log(Mpris.players.values[0])
 	}
     }*/
 }

@@ -14,7 +14,7 @@ Item {
 	anchors.fill: parent
 
 	Text {
-	    text: "Ram usage: " + Perfs.ram + "%"
+	    text: "Ram usage: " + Math.round(Perfs.ram) + "%"
 	    color: Theme.accent
 
 	    font {

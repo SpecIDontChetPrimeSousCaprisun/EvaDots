@@ -33,10 +33,10 @@ Variants {
 	    text: Qt.formatDateTime(clock.date, "hh:mm")
 	    color: Theme.accent
 	    font {
-	      family: "Jetbrains Mono Nerd"
-	      letterSpacing: -1
-	      pixelSize: 70
-	      weight: 600
+		family: "Jetbrains Mono Nerd"
+		letterSpacing: -1
+		pixelSize: 70
+		weight: 600
 	    }
 	}
     }

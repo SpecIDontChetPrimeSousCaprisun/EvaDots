@@ -15,7 +15,6 @@ Singleton {
 	    "'hl.dispatch(hl.dsp.focus({ workspace = " + '"' + index.toString() + '"' + "}))'"
 	]
 
-	console.log(switchProc.command)
 	switchProc.running = true
     }
 

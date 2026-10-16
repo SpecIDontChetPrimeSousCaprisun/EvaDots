@@ -36,7 +36,6 @@ StyledWindow {
 	    for (let i = 0; i < TooltipServ.buttonPoses.length; i++) {
 		let topLeft = TooltipServ.buttonPoses[i].topLeft
 
-		console.log(topLeft.x, TooltipServ.topLeft.x)
 		if (TooltipServ.buttonPoses[i].type === TooltipServ.type) return;
 
 		let mouseX = this.mapToItem(null, 0, 0).x + mouse.x

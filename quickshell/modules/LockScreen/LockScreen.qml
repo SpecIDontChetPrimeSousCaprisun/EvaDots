@@ -3,21 +3,32 @@ import Quickshell.Io
 import Quickshell.Wayland
 import QtQuick
 import QtQuick.Layouts
+import QtQuick.Effects
 import qs.config
 import qs.components
+import qs.services
 
 Item {
+    id: root
+
     WlSessionLock {
 	id: lock
 
 	WlSessionLockSurface {
-	    Text {
-		text: "unlock"
-		
-		MouseArea {
-		    anchors.fill: parent
-		    onClicked: lock.locked = false
-		}
+	    id: surface
+
+	    Background {
+		anchors.fill: parent
+		screen: surface.screen
+		id: bgImage
+	    }
+
+	    MultiEffect {
+		anchors.fill: bgImage
+		source: bgImage
+		blurEnabled: true
+		blur: 1.0
+		blurMax: 64
 	    }
 
 	    Widget {
@@ -56,7 +67,9 @@ Item {
     IpcHandler {
 	target: "lock"
 	function lock(): void {
-	    lock.locked = true
+	    LockBg.captureAllScreens(root, () => {
+		lock.locked = true
+	    })
 	}
     }
 
@@ -76,8 +89,6 @@ Item {
 	stdout: StdioCollector {
 	    onStreamFinished: {
 		const result = text.trim()
-
-		console.log(result)
 
 		if (result === "OK") {
 		    lock.locked = false

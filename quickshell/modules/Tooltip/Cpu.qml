@@ -14,7 +14,7 @@ Item {
 	anchors.fill: parent
 
 	Text {
-	    text: "Cpu usage: " + Perfs.cpu + "%"
+	    text: "Cpu usage: " + Math.round(Perfs.cpu) + "%"
 	    color: Theme.accent
 
 	    font {
