@@ -12,4 +12,5 @@ ShellRoot {
     Tooltip {}
     LockScreen {}
     ReloadPopup {}
+    Dashboard {}
 }

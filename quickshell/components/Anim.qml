@@ -24,7 +24,7 @@ NumberAnimation {
 	if (type === Anim.DefaultSpatial) return 100;
     }
 
-    easing: {
-	if (type === Anim.DefaultSpatial) return Easing.outQuad;
+    easing.type: {
+	if (type === Anim.DefaultSpatial) return Easing.OutQuad;
     }
 }

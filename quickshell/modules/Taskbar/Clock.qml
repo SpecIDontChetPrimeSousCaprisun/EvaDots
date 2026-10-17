@@ -2,6 +2,7 @@ import Quickshell
 import QtQuick
 import QtQuick.Layouts
 import qs.config
+import qs.services
 
 Item {
     Layout.fillWidth: true
@@ -17,6 +18,13 @@ Item {
 	    letterSpacing: -1
 	    pixelSize: 17
 	    weight: 600
+	}
+
+	MouseArea {
+	    anchors.fill: parent
+	    onClicked: {
+		DashboardServ.dashboardVisible = !DashboardServ.dashboardVisible 
+	    }
 	}
     }
 
