@@ -1,0 +1,3 @@
+[submodule "Evangelion"]
+	path = Evangelion
+	url = https://github.com/Aleph1-9012/Evangelion.git
