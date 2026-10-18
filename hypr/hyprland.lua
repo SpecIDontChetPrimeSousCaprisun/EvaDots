@@ -1,0 +1,6 @@
+require("modules/monitors")
+require("modules/keybinds")
+require("modules/autostart")
+require("modules/lookAndFeel")
+require("modules/misc")
+require("modules/workspaces")
