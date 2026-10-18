@@ -19,6 +19,10 @@ std::string Dependency::getPkgManager() {
 void Dependency::init() {
     dependencies.push_back(Dependency("quickshell", "qs"));
     dependencies.push_back(Dependency("cava", "cava"));
+    dependencies.push_back(Dependency("kitty", "kitty"));
+    dependencies.push_back(Dependency("vesktop", "vesktop"));
+    dependencies.push_back(Dependency("librewolf", "librewolf"));
+    dependencies.push_back(Dependency("awww", "awww"));
 }
 
 int Dependency::checkForCommand(std::string cmd) {
