@@ -14,6 +14,7 @@ void Link::init() {
 
     links.push_back(Link(root / "quickshell", home / ".config/quickshell"));
     links.push_back(Link(root / ".zshrc", home / ".zshrc"));
+    links.push_back(Link(root / "hypr", home / ".config/hypr"));
 }
 
 void Link::linkFiles() {
