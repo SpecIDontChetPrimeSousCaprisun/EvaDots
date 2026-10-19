@@ -11,8 +11,8 @@ Rectangle {
     anchors.bottom: parent.bottom
     gradient: Gradient {
 	orientation: Gradient.Vertical
-	GradientStop { position: 1.0; color: Qt.rgba(0, 0.16, 0.21, 1.0) }
-	GradientStop { position: 0.0; color: Qt.rgba(0, 0.16, 0.21, 0.0) }
+	GradientStop { position: 1.0; color: Theme.secondary }
+	GradientStop { position: 0.0; color: "transparent" }
     }
 
     RowLayout {
