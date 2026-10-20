@@ -21,7 +21,7 @@ void Dependency::init() {
     dependencies.push_back(Dependency("quickshell", "qs"));
     dependencies.push_back(Dependency("cava", "cava"));
     dependencies.push_back(Dependency("kitty", "kitty"));
-    dependencies.push_back(Dependency("vesktop", "vesktop"));
+    dependencies.push_back(Dependency("yay", "yay"));
     dependencies.push_back(Dependency("librewolf", "librewolf"));
     dependencies.push_back(Dependency("awww", "awww"));
     dependencies.push_back(Dependency("zsh", "zsh"));
@@ -29,6 +29,7 @@ void Dependency::init() {
     dependencies.push_back(Dependency("slurp", "slurp"));
     dependencies.push_back(Dependency("fastfetch", "fastfetch"));
     dependencies.push_back(Dependency("wl-clipboard", "wl-copy"));
+    dependencies.push_back(Dependency("rofi", "rofi"));
     dependencies.push_back(Dependency("ttf-jetbrains-mono-nerd", "some random fuckass command that will never work"));
 }
 
