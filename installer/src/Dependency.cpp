@@ -24,6 +24,11 @@ void Dependency::init() {
     dependencies.push_back(Dependency("vesktop", "vesktop"));
     dependencies.push_back(Dependency("librewolf", "librewolf"));
     dependencies.push_back(Dependency("awww", "awww"));
+    dependencies.push_back(Dependency("zsh", "zsh"));
+    dependencies.push_back(Dependency("grim", "grim"));
+    dependencies.push_back(Dependency("slurp", "slurp"));
+    dependencies.push_back(Dependency("wl-clipboard", "wl-copy"));
+    dependencies.push_back(Dependency("ttf-jetbrains-mono", "some random fuckass command that will never work"));
 }
 
 int Dependency::checkForCommand(std::string cmd) {
