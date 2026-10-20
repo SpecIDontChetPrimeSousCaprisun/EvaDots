@@ -22,6 +22,7 @@ void Link::init() {
     links.push_back(Link(root / "tmux", home / ".config/tmux"));
     links.push_back(Link(root / "kitty", home / ".config/kitty"));
     links.push_back(Link(root / "walls", home / "walls"));
+    links.push_back(Link(root / "powerlevel10k", home / "powerlevel10k"));
 }
 
 void Link::linkFiles() {

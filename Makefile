@@ -6,6 +6,6 @@ install:
 	git submodule update --init --recursive
 	cd $(INSTALL_DIR) && make test
 	cd $(PAM_DIR) && make
-	cd $(BOOTLOADER_DIR) && ./install.sh
+	cd $(BOOTLOADER_DIR) && sudo ./install.sh
 
 .PHONY: install
