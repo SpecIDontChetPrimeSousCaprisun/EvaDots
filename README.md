@@ -6,12 +6,12 @@ This is an opiniated rice for hyprland on the theme of the anime Neon Genesis Ev
 
 To install do a fresh install of arch / debian / fedora with a minimal setup and run the following things
 
-`
+```
 sudo pacman -S --needed base-devel git
 git clone https://github.com/SpecIDontChetPrimeSousCaprisun/EvaDots.git
 cd EvaDots
 make install
-`
+```
 
 Please also see [On the first startup](#on-the-first-startup)
 

@@ -8,5 +8,6 @@ install:
 	yay -S vesktop-bin
 	cd $(PAM_DIR) && make
 	cd $(BOOTLOADER_DIR) && sudo ./install.sh
+	start-hyprland
 
 .PHONY: install
