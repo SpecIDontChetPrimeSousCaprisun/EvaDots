@@ -17,6 +17,7 @@ std::string Dependency::getPkgManager() {
 }
 
 void Dependency::init() {
+    dependencies.push_back(Dependency("hyprland", "start-hyprland"));
     dependencies.push_back(Dependency("quickshell", "qs"));
     dependencies.push_back(Dependency("cava", "cava"));
     dependencies.push_back(Dependency("kitty", "kitty"));
