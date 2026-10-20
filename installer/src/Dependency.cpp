@@ -21,7 +21,6 @@ void Dependency::init() {
     dependencies.push_back(Dependency("quickshell", "qs"));
     dependencies.push_back(Dependency("cava", "cava"));
     dependencies.push_back(Dependency("kitty", "kitty"));
-    dependencies.push_back(Dependency("yay", "yay"));
     dependencies.push_back(Dependency("librewolf", "librewolf"));
     dependencies.push_back(Dependency("awww", "awww"));
     dependencies.push_back(Dependency("zsh", "zsh"));
