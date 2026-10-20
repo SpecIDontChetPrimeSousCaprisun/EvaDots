@@ -16,7 +16,6 @@ void Link::init() {
     links.push_back(Link(root / "quickshell", home / ".config/quickshell"));
     links.push_back(Link(root / ".zshrc", home / ".zshrc"));
     links.push_back(Link(root / ".zprofile", home / ".zprofile"));
-    links.push_back(Link(root / "powerlevel10k", home / "powerlevel10k"));
     links.push_back(Link(root / "hypr", home / ".config/hypr"));
     links.push_back(Link(root / "nvim", home / ".config/nvim"));
     links.push_back(Link(root / "fastfetch", home / ".config/fastfetch"));

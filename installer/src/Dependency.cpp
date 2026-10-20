@@ -28,7 +28,7 @@ void Dependency::init() {
     dependencies.push_back(Dependency("grim", "grim"));
     dependencies.push_back(Dependency("slurp", "slurp"));
     dependencies.push_back(Dependency("wl-clipboard", "wl-copy"));
-    dependencies.push_back(Dependency("ttf-jetbrains-mono", "some random fuckass command that will never work"));
+    dependencies.push_back(Dependency("ttf-jetbrains-mono-nerd", "some random fuckass command that will never work"));
 }
 
 int Dependency::checkForCommand(std::string cmd) {
