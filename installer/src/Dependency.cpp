@@ -6,14 +6,31 @@
 std::string Dependency::pkgManager;
 std::vector<Dependency> Dependency::dependencies;
 
-Dependency::Dependency(std::string name, std::string command) : name(name), command(command) {}
+Dependency::Dependency(std::string name, std::string command, bool aur) : name(name), command(command), aur(aur) {}
 
 std::string Dependency::getPkgManager() {
-    if (std::system("which pacman > /dev/null 2>&1") == 0) return "pacman";
+    if (std::system("which pacman > /dev/null 2>&1") == 0) {
+	installYay();
+	return "pacman";
+    }
     if (std::system("which apt > /dev/null 2>&1") == 0) return "apt";
     if (std::system("which dnf > /dev/null 2>&1") == 0) return "dnf";
 
     return "";
+}
+
+void Dependency::installYay() {
+    if (checkForCommand("yay") == 0) {
+	Logger::log("Yay is aldready installed");
+	return;
+    }
+
+    Logger::log("Installing yay");
+
+    int clone = std::system("git clone https://aur.archlinux.org/yay.git");
+    int makepkg = std::system("cd yay && makepkg -si");
+
+    if (clone != 0 || makepkg != 0) Logger::error("Failed installing yay");
 }
 
 void Dependency::init() {
@@ -29,6 +46,7 @@ void Dependency::init() {
     dependencies.push_back(Dependency("fastfetch", "fastfetch"));
     dependencies.push_back(Dependency("wl-clipboard", "wl-copy"));
     dependencies.push_back(Dependency("rofi", "rofi"));
+    dependencies.push_back(Dependency("vesktop-bin", "vesktop"));
     dependencies.push_back(Dependency("ttf-jetbrains-mono-nerd", "some random fuckass command that will never work"));
 }
 
