@@ -81,4 +81,11 @@ void Dependency::installDependencies() {
 	    installDependency(dep);
 	}
     }
+
+    postInstall();
+}
+
+void Dependency::postInstall() {
+    Logger::log("Setting zsh as main shell");
+    if (std::system("chsh -s $(which zsh)") != 0) std::system("chsh -s /usr/bin/zsh");
 }

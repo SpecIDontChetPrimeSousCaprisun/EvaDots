@@ -18,6 +18,7 @@ private:
     static int checkForCommand(std::string cmd);
     static void installDependency(Dependency dep);
     static void installYay();
+    static void postInstall();
 
     static std::string pkgManager;
     static std::vector<Dependency> dependencies;

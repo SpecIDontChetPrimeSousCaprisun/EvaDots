@@ -22,4 +22,4 @@ clean:
 test: all
 	./$(TARGET)
 
-.phony: all clean
+.PHONY: all clean
