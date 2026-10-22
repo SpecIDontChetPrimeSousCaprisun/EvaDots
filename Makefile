@@ -5,7 +5,6 @@ BOOTLOADER_DIR = Evangelion
 install:
 	git submodule update --init --recursive
 	cd $(INSTALL_DIR) && make test
-	chsh -s $(shell which zsh)
 	cd $(PAM_DIR) && make
 	cd $(BOOTLOADER_DIR) && sudo ./install.sh
 	dbus-run-session start-hyprland
