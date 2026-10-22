@@ -8,6 +8,6 @@ install:
 	chsh -s $(shell which zsh)
 	cd $(PAM_DIR) && make
 	cd $(BOOTLOADER_DIR) && sudo ./install.sh
-	start-hyprland
+	dbus-run-session start-hyprland
 
 .PHONY: install
