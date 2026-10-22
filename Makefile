@@ -6,9 +6,6 @@ install:
 	git submodule update --init --recursive
 	cd $(INSTALL_DIR) && make test
 	chsh -s $(shell which zsh)
-	git clone https://aur.archlinux.org/yay.git
-	cd yay && makepkg -si
-	yay -S vesktop-bin
 	cd $(PAM_DIR) && make
 	cd $(BOOTLOADER_DIR) && sudo ./install.sh
 	start-hyprland
