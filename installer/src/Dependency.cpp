@@ -46,7 +46,7 @@ void Dependency::init() {
     dependencies.push_back(Dependency("fastfetch", "fastfetch"));
     dependencies.push_back(Dependency("wl-clipboard", "wl-copy"));
     dependencies.push_back(Dependency("rofi", "rofi"));
-    dependencies.push_back(Dependency("vesktop-bin", "vesktop"));
+    dependencies.push_back(Dependency("vesktop-bin", "vesktop", true));
     dependencies.push_back(Dependency("ttf-jetbrains-mono-nerd", "some random fuckass command that will never work"));
 }
 
@@ -58,7 +58,8 @@ int Dependency::checkForCommand(std::string cmd) {
 void Dependency::installDependency(Dependency dep) {
     std::string cmd;
 
-    if (pkgManager == "pacman") cmd = "sudo pacman -S --noconfirm " + dep.name;
+    if (pkgManager == "pacman" && dep.aur) cmd = "yay -S --noconfirm " + dep.name;
+    else if (pkgManager == "pacman") cmd = "sudo pacman -S --noconfirm " + dep.name;
     else if (pkgManager == "apt") cmd = "sudo apt install -y " + dep.name;
     else if (pkgManager == "dnf") cmd = "sudo dnf install -y " + dep.name;
 
