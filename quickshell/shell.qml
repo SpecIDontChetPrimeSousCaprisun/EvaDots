@@ -8,6 +8,7 @@ import qs.modules.LockScreen
 
 ShellRoot {
     Background {}
+    AppLauncher {}
     ContentWindow {}
     Tooltip {}
     LockScreen {}

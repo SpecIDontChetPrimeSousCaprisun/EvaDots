@@ -5,7 +5,7 @@
 -- Set programs that you use
 local terminal = "kitty"
 local fileManager = "alacritty -e yazi"
-local menu = "rofi -show drun" --"rofi -show drun -theme ~/.config/rofi/config.rasi"
+local menu = "qs ipc call apps toggleLauncher" --"rofi -show drun -theme ~/.config/rofi/config.rasi"
 local browser = "librewolf"
 
 ---------------
