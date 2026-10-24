@@ -16,6 +16,7 @@ StyledWindow {
     visible: Apps.launcherOpen
     WlrLayershell.exclusionMode: ExclusionMode.Ignore
     WlrLayershell.layer: WlrLayer.Overlay
+    WlrLayershell.keyboardFocus: WlrKeyboardFocus.OnDemand
 
     anchors.top: true
     anchors.bottom: true
@@ -32,6 +33,7 @@ StyledWindow {
 	    anchors.fill: parent
 
 	    Label {}
+	    SearchBar {}
 	    AppList {}
 	}
     }
