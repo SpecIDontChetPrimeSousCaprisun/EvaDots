@@ -31,6 +31,9 @@ StyledWindow {
 	ColumnLayout {
 	    id: layout
 	    anchors.fill: parent
+	    anchors.leftMargin: 2
+	    anchors.rightMargin: 2
+	    anchors.bottomMargin: 2
 
 	    Label {}
 	    SearchBar {}

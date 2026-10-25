@@ -20,7 +20,7 @@ Rectangle {
 	}
 
 	Keys.onEscapePressed: {
-	    Apps.launcherVisible = false
+	    Apps.launcherOpen = false
 	}
 
 	Keys.onUpPressed: {
