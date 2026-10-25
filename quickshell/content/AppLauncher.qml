@@ -34,7 +34,7 @@ StyledWindow {
 
 	    Label {}
 	    SearchBar {}
-	    AppList {}
+	    AppList { id: appList }
 	}
     }
 }
